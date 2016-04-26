@@ -12,7 +12,7 @@
     <description>
         A simple and fun game to test your memory.
     </description>
-
+	<plugin name="cordova-plugin-whitelist" />
     <author href="http://jgonzalezy8.aisites.com/" email="lnsflive@gmail.com">
         Jaime Gonzalez
     </author>
