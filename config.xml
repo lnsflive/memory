@@ -25,5 +25,11 @@
 		<preference name="android-targetSdkVersion" value="11" />
 		<preference name="android-installLocation" value="auto" />
 		<icon src="icon.png" />
+		<supports-screens android:anyDensity="true" android:resizeable="true" 
+			android:smallScreens="true" 
+			android:normalScreens="true" 
+			android:largeScreens="true" 
+			android:xlargeScreens="true" />
 	</platform>
+	
 </widget>
