@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+		xmlns:android   = "http://schemas.android.com/apk/res/android"
+        id          = "com.lnsflive.memory"
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Memory Game</name>
+
+    <description>
+        A simple and fun game to test your memory.
+    </description>
+
+    <author href="http://jgonzalezy8.aisites.com/" email="lnsflive@gmail.com">
+        Jaime Gonzalez
+    </author>
+	
+	<platform name="android" >
+		<preference name="phonegap-version" value="cli-6.1.0" />
+		<preference name="orientation" value="landscape" />
+		<preference name="fullscreen" value="true" />
+		<preference name="android-minSdkVersion" value="7" />
+		<preference name="android-targetSdkVersion" value="11" />
+		<preference name="android-installLocation" value="auto" />
+		<icon src="icon.png" />
+	</platform>
+</widget>
