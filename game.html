@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>Untitled-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+</head>
+
+<style type="text/css">
+
+
+h1,div#timer,div#tries,div#replace_div{
+	color:red;
+	font-family:arial;
+	}
+div{
+background-color: 05203b;
+font-weight: bold;
+font-size:50px
+
+}
+#replace_div{
+width: 375;
+height: 79;
+}
+#timer{
+width: 374;
+height: 96;
+}
+#tries{
+width: 374;
+height: 98;
+}
+
+div#memory_board{
+	background:#ccc;
+	width: 1988;
+	height: 1440;
+}
+div#memory_board > div{
+	background: url(tile_bg4.jpg) no-repeat;
+	background-size: contain;
+	border:#fff 1px solid;
+	width:320px;
+	height:320px;
+	margin-top:15;
+	margin-left:8;
+	float:left;
+	font-family:arial;
+	font-size:150px;
+	cursor:pointer;
+	text-align:center;
+	vertical-align: middle;
+	line-height: 320px;
+}
+</style>
+<script>
+function freshStart(){
+		var test = prompt("Enter your name");
+		document.getElementById('replace_div').innerHTML = test;
+		newBoard();
+		if(navigator.userAgent.match(/Android/i)){
+    window.scrollTo(0,1);
+ }
+}
+var sec = 0;
+function startstop(){
+	clock = setInterval("stopWatch()", 1000);
+}
+	function stopWatch() {
+	sec++;
+	document.getElementById("timer").innerHTML = sec;
+}
+var memory_array = ['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H','I','I','J','J','K','K','L','L'];
+var memory_values = [];
+var memory_tile_ids = [];
+var tiles_flipped = 0;
+var number_tries = 0;
+Array.prototype.memory_tile_shuffle = function(){
+    var i = this.length, j, temp;
+    while(--i > 0){
+        j = Math.floor(Math.random() * (i+1));
+        temp = this[j];
+        this[j] = this[i];
+        this[i] = temp;
+    }
+}
+function newBoard(){
+	startstop();
+	tiles_flipped = 0;
+	var output = '';
+    memory_array.memory_tile_shuffle();
+	for(var i = 0; i < memory_array.length; i++){
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+	}
+	document.getElementById('memory_board').innerHTML = output;
+}
+function memoryFlipTile(tile,val){
+
+	if(tile.innerHTML == "" && memory_values.length < 2){
+		tile.style.background = '#FFF';
+		tile.innerHTML = val;
+		if(memory_values.length == 0){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+		} else if(memory_values.length == 1){
+			memory_values.push(val);
+			memory_tile_ids.push(tile.id);
+			number_tries++;
+			document.getElementById("tries").innerHTML = number_tries;
+			if(memory_values[0] == memory_values[1]){
+				tiles_flipped += 2;
+				// Clear both arrays
+				memory_values = [];
+            	memory_tile_ids = [];
+				// Check to see if the whole board is cleared
+				if(tiles_flipped == memory_array.length){
+				var name = document.getElementById('replace_div').innerHTML;
+				
+				var score = (200 - sec) + (100 - number_tries);
+					url = 'write.php' + 
+							'?moves=' + number_tries +
+							'&time=' + sec +
+							'&score=' + score +
+							'&name=' + encodeURIComponent(name);
+					window.location.href = url;
+				}
+			} else {
+				function flip2Back(){
+				    // Flip the 2 tiles back over
+				    var tile_1 = document.getElementById(memory_tile_ids[0]);
+				    var tile_2 = document.getElementById(memory_tile_ids[1]);
+				    tile_1.style.background = 'url(tile_bg4.jpg) no-repeat';
+            	    tile_1.innerHTML = "";
+				    tile_2.style.background = 'url(tile_bg4.jpg) no-repeat';
+            	    tile_2.innerHTML = "";
+				    // Clear both arrays
+				    memory_values = [];
+            	    memory_tile_ids = [];
+				}
+				setTimeout(flip2Back, 500);
+			}
+		}
+	}
+}
+</script>
+
+
+<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="freshStart()">
+<!-- Save for Web Slices (Untitled-1) -->
+<table id="Table_01" width="2560" height="1440" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td rowspan="9">
+			<!-- <img src="images/game_01.gif" width="1988" height="1440" alt=""></td> -->
+			<div id="memory_board"></div>
+		<td colspan="4">
+			<img src="images/game_02.gif" width="572" height="511" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="8">
+			<img src="images/game_03.gif" width="142" height="929" alt=""></td>
+		<td colspan="2">
+			<!-- <img src="images/replace_name.gif" width="375" height="79" alt=""></td> -->
+			<div id="replace_div">test</div>
+		<td rowspan="8">
+			<img src="images/game_05.gif" width="55" height="929" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/game_06.gif" width="375" height="212" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<!-- <img src="images/replace_time.gif" width="374" height="96" alt=""></td> -->
+			<div id="timer">0</div>
+		<td rowspan="6">
+			<img src="images/game_08.gif" width="1" height="638" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/game_09.gif" width="374" height="209" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<!-- <img src="images/replace_moves.gif" width="374" height="98" alt=""></td> -->
+			<div id="tries">0</div>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/game_11.gif" width="374" height="25" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="history.go(0)"></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/game_13.gif" width="374" height="126" alt=""></td>
+	</tr>
+</table>
+<!-- End Save for Web Slices -->
+</body>
+</html>
