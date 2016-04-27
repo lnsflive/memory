@@ -216,7 +216,7 @@ function memoryFlipTile(tile,val){
 				var name = document.getElementById('replace_div').innerHTML;
 				
 				var score = (200 - sec) + (100 - number_tries);
-				window.game.submitScore(leaderboardId, score*5);
+				window.game.submitScore(leaderboardId, score*5.1);
 				clearInterval(clock);
 				//setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
 				window.game.unlockAchievement(achievementId1);
@@ -225,7 +225,7 @@ function memoryFlipTile(tile,val){
 				window.game.incrementAchievement(achievementId4, 1)
 				window.game.incrementAchievement(achievementId5, 1)
 				window.game.incrementAchievement(achievementId6, 1)
-				setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 500);
+				setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 2000);
 				//window.game.showLeaderboard(leaderboardId);
 				
 					/*url = 'http://24.155.25.23/memory/write.php' + 
