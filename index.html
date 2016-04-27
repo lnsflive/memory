@@ -151,9 +151,9 @@ function restart(){
 	newBoard();
 }
 
-function checkLogin(){
+document.onload = function checkLogin(){
 	window.game.login();
-	alert(window.game.isLoggedIn());
+	newBoard();
 }
 
 function freshStart(){
@@ -252,7 +252,7 @@ function memoryFlipTile(tile,val){
 </script>
 
 
-<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="freshStart()">
+<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (Untitled-1) -->
 <table id="Table_01" width="2560" height="1440" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -260,7 +260,7 @@ function memoryFlipTile(tile,val){
 			<!-- <img src="images/game_01.gif" width="1988" height="1440" alt=""></td> -->
 			<div id="memory_board"></div>
 		<td colspan="4">
-			<img src="images/game_02.gif" width="572" height="511" alt="" onclick="checkLogin();"></td>
+			<img src="images/game_02.gif" width="572" height="511" alt=""></td>
 	</tr>
 	<tr>
 		<td rowspan="8">
