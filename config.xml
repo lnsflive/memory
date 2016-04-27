@@ -37,6 +37,6 @@
 	</platform>
 	<plugin name="com.synconset.imageresizer" spec="0.1.1" source="pgb" />
 	<gap:plugin name="cordova-plugin-game" source="npm" >
-		<param name="APP_ID" value="80968417246" />
+		<param name="APP_ID" value="425178501386" />
 	</gap:plugin>
 </widget>

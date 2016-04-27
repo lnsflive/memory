@@ -56,12 +56,13 @@ div#memory_board > div{
 </style>
 <script>
 
-var leaderboardId = "CgkI3v_f0K0CEAIQCw";
-var achievementId1 = "CgkI3v_f0K0CEAIQAQ";
-var achievementId2 = "CgkI3v_f0K0CEAIQAw";
-var achievementId3 = "CgkI3v_f0K0CEAIQBA";
-var achievementId4 = "CgkI3v_f0K0CEAIQBQ";
-var achievementId5 = "CgkI3v_f0K0CEAIQBg";
+var leaderboardId = "CgkIiqL09K8MEAIQBw";
+var achievementId1 = "CgkIiqL09K8MEAIQAQ";
+var achievementId2 = "CgkIiqL09K8MEAIQAg";
+var achievementId3 = "CgkIiqL09K8MEAIQAw";
+var achievementId4 = "CgkIiqL09K8MEAIQBA";
+var achievementId5 = "CgkIiqL09K8MEAIQBQ";
+var achievementId6 = "CgkIiqL09K8MEAIQBg";
 /*
 var leaderboardId;
 var achievementId1;
@@ -126,7 +127,7 @@ document.addEventListener("deviceready", function(){
         alert('onUnlockAchievementFailed');
     };
     window.game.onIncrementAchievementSucceeded = function() {
-        alert('onIncrementAchievementSucceeded');
+        //alert('onIncrementAchievementSucceeded');
     };  
     window.game.onIncrementAchievementFailed = function() {
         alert('onIncrementAchievementFailed');
@@ -217,10 +218,15 @@ function memoryFlipTile(tile,val){
 				var score = (200 - sec) + (100 - number_tries);
 				window.game.submitScore(leaderboardId, score*5);
 				clearInterval(clock);
-				setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
-				
+				//setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
+				window.game.unlockAchievement(achievementId1);
+				window.game.incrementAchievement(achievementId2, 1)
+				window.game.incrementAchievement(achievementId3, 1)
+				window.game.incrementAchievement(achievementId4, 1)
+				window.game.incrementAchievement(achievementId5, 1)
+				window.game.incrementAchievement(achievementId6, 1)
 				window.game.showLeaderboard(leaderboardId);
-			
+				
 					/*url = 'http://24.155.25.23/memory/write.php' + 
 							'?moves=' + number_tries +
 							'&time=' + sec +
