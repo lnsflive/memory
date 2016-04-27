@@ -120,7 +120,7 @@ document.addEventListener("deviceready", function(){
     };	
 	//	 
     window.game.onUnlockAchievementSucceeded = function() {
-        alert('onUnlockAchievementSucceeded');
+        //alert('onUnlockAchievementSucceeded');
     };  
     window.game.onUnlockAchievementFailed = function() {
         alert('onUnlockAchievementFailed');
@@ -155,6 +155,7 @@ function restart(){
 	document.getElementById("tries").innerHTML = number_tries;
 	clearInterval(clock);
 	newBoard();
+	window.game.showAchievements();
 }
 
 
@@ -215,10 +216,12 @@ function memoryFlipTile(tile,val){
 				var name = document.getElementById('replace_div').innerHTML;
 				
 				var score = (200 - sec) + (100 - number_tries);
-				window.game.submitScore(leaderboardId, score);
+				window.game.submitScore(leaderboardId, score*5);
 				clearInterval(clock);
 				window.game.unlockAchievement(achievementId1);
-				window.game.showLeaderboard(leaderboardId);
+				window.game.getPlayerScore(leaderboardId);
+				//window.game.showLeaderboard(leaderboardId);
+			
 					/*url = 'http://24.155.25.23/memory/write.php' + 
 							'?moves=' + number_tries +
 							'&time=' + sec +
@@ -249,7 +252,7 @@ function memoryFlipTile(tile,val){
 
 
 
-setTimeout(function(){ window.game.login(); }, 200);
+setTimeout(function(){ window.game.login(); }, 250);
 
 </script>
 
