@@ -155,9 +155,6 @@ function freshStart(){
 		var test = "Player";
 		document.getElementById('replace_div').innerHTML = test;
 		newBoard();
-		if(navigator.userAgent.match(/Android/i)){
-    window.scrollTo(0,1);
- }
 }
 var sec = 0;
 function startstop(){
@@ -182,6 +179,7 @@ Array.prototype.memory_tile_shuffle = function(){
     }
 }
 function newBoard(){
+	sec = 0;
 	startstop();
 	tiles_flipped = 0;
 	var output = '';
@@ -295,7 +293,7 @@ function memoryFlipTile(tile,val){
 	</tr>
 	<tr>
 		<td>
-			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="history.go(0)"></td>
+			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="newBoard();"></td>
 	</tr>
 	<tr>
 		<td>
