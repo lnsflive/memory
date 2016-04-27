@@ -113,7 +113,7 @@ document.addEventListener("deviceready", function(){
     };
     window.game.onGetPlayerScoreSucceeded = function(result) {
 		var playerScore = result;
-        alert('onGetPlayerScoreSucceeded: ' + playerScore);
+        //alert('onGetPlayerScoreSucceeded: ' + playerScore);
     };
     window.game.onGetPlayerScoreFailed = function() {
         alert('onGetPlayerScoreFailed');
@@ -250,7 +250,7 @@ function memoryFlipTile(tile,val){
 
 
 function funChange(){
-	window.game.getPlayerImage();
+	window.game.getPlayerScore(leaderboardId);
 }
 
 function funChange2(){
