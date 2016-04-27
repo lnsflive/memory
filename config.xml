@@ -34,5 +34,7 @@
 			android:xlargeScreens="true" />
 	</platform>
 	<plugin name="com.synconset.imageresizer" spec="0.1.1" source="pgb" />
-	
+	<gap:plugin name="cordova-plugin-game" source="npm" >
+    <param name="APP_ID" value="80968417246" />
+</gap:plugin>
 </widget>
