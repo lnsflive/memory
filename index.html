@@ -5,6 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<script type="text/javascript" src="cordova.js"></script>
 </head>
 
 <style type="text/css">
@@ -57,99 +58,15 @@ div#memory_board > div{
 </style>
 <script>
 
+funtion newStart(){
+	window.game.login();
+	freshStart();
+}
+
 var leaderboardId = "CgkI3v_f0K0CEAIQAA";
-/*
-var achievementId1 = "CgkI2O2VnNMUEAIQAQ";
-var achievementId2 = "CgkI2O2VnNMUEAIQBw";
-var achievementId3 = "CgkI2O2VnNMUEAIQBA";
-var achievementId4 = "CgkI2O2VnNMUEAIQAg";
-var achievementId5 = "CgkI2O2VnNMUEAIQBQ";
-
-var leaderboardId;
-var achievementId1;
-var achievementId2;
-var achievementId3;
-var achievementId4;
-var achievementId5;
-//android
-if (navigator.userAgent.match(/Android/i)) {
-	leaderboardId = "CgkI2O2VnNMUEAIQBg";
-	achievementId1 = "CgkI2O2VnNMUEAIQAQ";
-	achievementId2 = "CgkI2O2VnNMUEAIQBw";
-	achievementId3 = "CgkI2O2VnNMUEAIQBA";
-	achievementId4 = "CgkI2O2VnNMUEAIQAg";
-	achievementId5 = "CgkI2O2VnNMUEAIQBQ";
-}
-//ios
-else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
-	leaderboardId = "testapp_leaderboard";
-	achievementId1 = "testapp_achievement1";
-	achievementId2 = "testapp_achievement2";
-	achievementId3 = "testapp_achievement3";
-	achievementId4 = "testapp_achievement4";
-	achievementId5 = "testapp_achievement5";
-}
-*/
-//
-document.addEventListener("deviceready", function(){
-	window.game.setUp();
-	//callback
-	window.game.onLoginSucceeded = function(result) {
-		var playerDetail = result;
-        alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
-    };	
-    window.game.onLoginFailed = function() {
-        alert('onLoginFailed');
-    };
-	//	
-    window.game.onSubmitScoreSucceeded = function() {
-        alert('onSubmitScoreSucceeded');
-    };	
-    window.game.onSubmitScoreFailed = function() {
-        alert('onSubmitScoreFailed');
-    };	
-    window.game.onGetPlayerScoreSucceeded = function(result) {
-		var playerScore = result;
-        alert('onGetPlayerScoreSucceeded: ' + playerScore);
-    };
-    window.game.onGetPlayerScoreFailed = function() {
-        alert('onGetPlayerScoreFailed');
-    };
-	//	
-    window.game.onUnlockAchievementSucceeded = function() {
-        alert('onUnlockAchievementSucceeded');
-    };  
-    window.game.onUnlockAchievementFailed = function() {
-        alert('onUnlockAchievementFailed');
-    };
-    window.game.onIncrementAchievementSucceeded = function() {
-        alert('onIncrementAchievementSucceeded');
-    };  
-    window.game.onIncrementAchievementFailed = function() {
-        alert('onIncrementAchievementFailed');
-    };
-    window.game.onResetAchievementsSucceeded = function() {
-        alert('onResetAchievementsSucceeded');
-    };	
-    window.game.onResetAchievementsFailed = function() {
-        alert('onResetAchievementsFailed');
-    };
-	//
-    window.game.onGetPlayerImageSucceeded = function(result) {
-		var playerImageUrl = result;
-        alert('onGetPlayerImageSucceeded: ' + playerImageUrl);
-    };
-    window.game.onGetPlayerImageFailed = function() {
-        alert('onGetPlayerImageFailed');
-    };	
-}, false);
-
-
 
 
 function freshStart(){
-		window.game.login();
-		//var test = prompt("Enter your name");
 		var test = "Player";
 		document.getElementById('replace_div').innerHTML = test;
 		newBoard();
@@ -240,6 +157,66 @@ function memoryFlipTile(tile,val){
 		}
 	}
 }
+
+
+
+
+
+document.addEventListener("deviceready", function(){
+	window.game.setUp();
+	//callback
+	window.game.onLoginSucceeded = function(result) {
+		var playerDetail = result;
+        alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
+    };	
+    window.game.onLoginFailed = function() {
+        alert('onLoginFailed');
+    };
+	//	
+    window.game.onSubmitScoreSucceeded = function() {
+        alert('onSubmitScoreSucceeded');
+    };	
+    window.game.onSubmitScoreFailed = function() {
+        alert('onSubmitScoreFailed');
+    };	
+    window.game.onGetPlayerScoreSucceeded = function(result) {
+		var playerScore = result;
+        alert('onGetPlayerScoreSucceeded: ' + playerScore);
+    };
+    window.game.onGetPlayerScoreFailed = function() {
+        alert('onGetPlayerScoreFailed');
+    };
+	//	
+    window.game.onUnlockAchievementSucceeded = function() {
+        alert('onUnlockAchievementSucceeded');
+    };  
+    window.game.onUnlockAchievementFailed = function() {
+        alert('onUnlockAchievementFailed');
+    };
+    window.game.onIncrementAchievementSucceeded = function() {
+        alert('onIncrementAchievementSucceeded');
+    };  
+    window.game.onIncrementAchievementFailed = function() {
+        alert('onIncrementAchievementFailed');
+    };
+    window.game.onResetAchievementsSucceeded = function() {
+        alert('onResetAchievementsSucceeded');
+    };	
+    window.game.onResetAchievementsFailed = function() {
+        alert('onResetAchievementsFailed');
+    };
+	//
+    window.game.onGetPlayerImageSucceeded = function(result) {
+		var playerImageUrl = result;
+        alert('onGetPlayerImageSucceeded: ' + playerImageUrl);
+    };
+    window.game.onGetPlayerImageFailed = function() {
+        alert('onGetPlayerImageFailed');
+    };	
+}, false);
+
+
+
 </script>
 
 
