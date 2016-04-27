@@ -145,7 +145,11 @@ document.addEventListener("deviceready", function(){
 }, false);
 
 
-
+function restart(){
+	sec = 0;
+	clearInterval(clock);
+	newBoard();
+}
 
 window.onload = function(){
   window.game.login();
@@ -179,7 +183,6 @@ Array.prototype.memory_tile_shuffle = function(){
     }
 }
 function newBoard(){
-	sec = 0;
 	startstop();
 	tiles_flipped = 0;
 	var output = '';
@@ -293,7 +296,7 @@ function memoryFlipTile(tile,val){
 	</tr>
 	<tr>
 		<td>
-			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="newBoard();"></td>
+			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="restart();"></td>
 	</tr>
 	<tr>
 		<td>
