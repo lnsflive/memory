@@ -97,6 +97,8 @@ document.addEventListener("deviceready", function(){
 	window.game.onLoginSucceeded = function(result) {
 		var playerDetail = result;
         alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
+		playerDetail['playerDisplayName'] = document.getElementById('replace_div').innerHTML;
+		newBoard();
     };	
     window.game.onLoginFailed = function() {
         alert('onLoginFailed');
@@ -244,21 +246,12 @@ function memoryFlipTile(tile,val){
 
 function recall(){
 	window.game.login();
-	freshStart();
-	newBoard();
 }
 
-var something = (function() {
-    var executed = false;
-    return function () {
-        if (!executed) {
-            executed = true;
-            window.game.login();
-			freshStart();
-			newBoard();
-        }
-    };
-})();
+window.onload = function() {
+  window.game.login();
+};
+
 </script>
 
 
