@@ -56,7 +56,7 @@ div#memory_board > div{
 </style>
 <script>
 
-var leaderboardId = "CgkI3v_f0K0CEAIQAA";
+var leaderboardId = "CgkI3v_f0K0CEAIQCw";
 var achievementId1 = "CgkI3v_f0K0CEAIQAQ";
 var achievementId2 = "CgkI3v_f0K0CEAIQAw";
 var achievementId3 = "CgkI3v_f0K0CEAIQBA";
@@ -217,6 +217,7 @@ function memoryFlipTile(tile,val){
 				var score = (200 - sec) + (100 - number_tries);
 				window.game.submitScore(leaderboardId, score);
 				clearInterval(clock);
+				window.game.unlockAchievement(achievementId1);
 				window.game.showLeaderboard(leaderboardId);
 					/*url = 'http://24.155.25.23/memory/write.php' + 
 							'?moves=' + number_tries +
