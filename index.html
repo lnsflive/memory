@@ -151,15 +151,16 @@ function restart(){
 	newBoard();
 }
 
-document.onload = function checkLogin(){
+function checkLogin(){
 	window.game.login();
-	freshStart();
+	newBoard();
 }
+
 
 function freshStart(){
 		var test = "Player";
 		document.getElementById('replace_div').innerHTML = test;
-		newBoard();
+		checkLogin();
 }
 var sec = 0;
 function startstop(){
@@ -252,7 +253,7 @@ function memoryFlipTile(tile,val){
 </script>
 
 
-<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="freshStart();">
 <!-- Save for Web Slices (Untitled-1) -->
 <table id="Table_01" width="2560" height="1440" border="0" cellpadding="0" cellspacing="0">
 	<tr>
