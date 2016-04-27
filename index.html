@@ -151,7 +151,10 @@ function restart(){
 	newBoard();
 }
 
-
+function checkLogin(){
+	window.game.login();
+	alert(window.game.isLoggedIn());
+}
 
 function freshStart(){
 		var test = "Player";
@@ -257,7 +260,7 @@ function memoryFlipTile(tile,val){
 			<!-- <img src="images/game_01.gif" width="1988" height="1440" alt=""></td> -->
 			<div id="memory_board"></div>
 		<td colspan="4">
-			<img src="images/game_02.gif" width="572" height="511" alt="" onclick="window.game.login();"></td>
+			<img src="images/game_02.gif" width="572" height="511" alt="" onload="checkLogin();"></td>
 	</tr>
 	<tr>
 		<td rowspan="8">
