@@ -155,9 +155,8 @@ function restart(){
 
 
 function freshStart(){
-		var test = "Player";
+		var test = playerDetail['playerDisplayName'];
 		document.getElementById('replace_div').innerHTML = test;
-		checkLogin();
 }
 var sec = 0;
 function startstop(){
@@ -242,18 +241,17 @@ function memoryFlipTile(tile,val){
 		}
 	}
 }
-
-
-function checkLogin(){
-	newBoard();
-	window.game.login();
-}
+document.addEventListener('DOMContentLoaded', function() {
+   window.game.login();
+   freshStart();
+   newBoard();
+}, false);
 
 
 </script>
 
 
-<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="freshStart();">
+<body bgcolor="#05203b" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- Save for Web Slices (Untitled-1) -->
 <table id="Table_01" width="2560" height="1440" border="0" cellpadding="0" cellspacing="0">
 	<tr>
@@ -268,7 +266,7 @@ function checkLogin(){
 			<img src="images/game_03.gif" width="142" height="929" alt=""></td>
 		<td colspan="2">
 			<!-- <img src="images/replace_name.gif" width="375" height="79" alt=""></td> -->
-			<div id="replace_div">test</div>
+			<div id="replace_div">Player</div>
 		<td rowspan="8">
 			<img src="images/game_05.gif" width="55" height="929" alt=""></td>
 	</tr>
