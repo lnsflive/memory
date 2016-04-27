@@ -17,14 +17,15 @@
         Jaime Gonzalez
     </author>
 	<access origin="http://24.155.25.23/" subdomains="true" />
+	<access origin="http://google.com" subdomains="true" />
 	<platform name="android" >
 		<preference name="phonegap-version" value="cli-6.1.0" />
 		<preference name="orientation" value="landscape" />
 		<preference name="fullscreen" value="true" />
 		<preference name="webviewbounce" value="true" />
 		<preference name="permissions" value="none"/>
-		<preference name="android-minSdkVersion" value="7" />
-		<preference name="android-targetSdkVersion" value="11" />
+		<preference name="android-minSdkVersion" value="14" />
+		<preference name="android-targetSdkVersion" value="15" />
 		<preference name="android-installLocation" value="auto" />
 		<icon src="icon.png" />
 		<supports-screens android:anyDensity="true" android:resizeable="true" 
