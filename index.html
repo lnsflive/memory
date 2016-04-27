@@ -155,7 +155,6 @@ function restart(){
 	document.getElementById("tries").innerHTML = number_tries;
 	clearInterval(clock);
 	newBoard();
-	window.game.showAchievements();
 }
 
 
@@ -219,8 +218,7 @@ function memoryFlipTile(tile,val){
 				window.game.submitScore(leaderboardId, score*5);
 				clearInterval(clock);
 				window.game.unlockAchievement(achievementId1);
-				window.game.getPlayerScore(leaderboardId);
-				//window.game.showLeaderboard(leaderboardId);
+				window.game.showLeaderboard(leaderboardId);
 			
 					/*url = 'http://24.155.25.23/memory/write.php' + 
 							'?moves=' + number_tries +
@@ -250,7 +248,10 @@ function memoryFlipTile(tile,val){
 }
 
 
-
+function funChange(){
+	window.game.resetAchievements();
+	window.game.showAchievements();
+}
 
 setTimeout(function(){ window.game.login(); }, 250);
 
@@ -265,7 +266,7 @@ setTimeout(function(){ window.game.login(); }, 250);
 			<!-- <img src="images/game_01.gif" width="1988" height="1440" alt=""></td> -->
 			<div id="memory_board"></div>
 		<td colspan="4">
-			<img src="images/game_02.gif" width="572" height="511" alt=""></td>
+			<img src="images/game_02.gif" width="572" height="511" alt="" onclick="funChange();"></td>
 	</tr>
 	<tr>
 		<td rowspan="8">
