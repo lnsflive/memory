@@ -150,6 +150,7 @@ document.addEventListener("deviceready", function(){
 
 function restart(){
 	sec = 0;
+	number_tries = 0;
 	clearInterval(clock);
 	newBoard();
 }
@@ -245,7 +246,7 @@ function memoryFlipTile(tile,val){
 
 
 
-setTimeout(function(){ window.game.login(); }, 500);
+setTimeout(function(){ window.game.login(); }, 100);
 
 </script>
 
