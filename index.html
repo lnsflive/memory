@@ -96,7 +96,7 @@ document.addEventListener("deviceready", function(){
 	//callback 
 	window.game.onLoginSucceeded = function(result) {
 		var playerDetail = result;
-        alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
+        //alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
 		var changeName = playerDetail['playerDisplayName'];
 		document.getElementById('replace_div').innerHTML = changeName;
 		newBoard();
@@ -252,7 +252,7 @@ function recall(){
 
 
 
-setTimeout(function(){ window.game.login(); }, 2000);
+setTimeout(function(){ window.game.login(); }, 1000);
 
 </script>
 
