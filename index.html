@@ -2,8 +2,6 @@
 <head>
 <title>Untitled-1</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <script type="text/javascript" src="cordova.js"></script>
 </head>
@@ -58,13 +56,93 @@ div#memory_board > div{
 </style>
 <script>
 
-funtion newStart(){
-	window.game.login();
-	freshStart();
-}
-
 var leaderboardId = "CgkI3v_f0K0CEAIQAA";
-
+var achievementId1 = "CgkI3v_f0K0CEAIQAQ";
+var achievementId2 = "CgkI3v_f0K0CEAIQAw";
+var achievementId3 = "CgkI3v_f0K0CEAIQBA";
+var achievementId4 = "CgkI3v_f0K0CEAIQBQ";
+var achievementId5 = "CgkI3v_f0K0CEAIQBg";
+/*
+var leaderboardId;
+var achievementId1;
+var achievementId2;
+var achievementId3;
+var achievementId4;
+var achievementId5;
+//android
+if (navigator.userAgent.match(/Android/i)) {
+	leaderboardId = "REPLACE_THIS_WITH_YOUR_LEADERBOARD_ID";
+	achievementId1 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID1";
+	achievementId2 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID2";
+	achievementId3 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID3";
+	achievementId4 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID4";
+	achievementId5 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID5";
+}
+//ios
+else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+	leaderboardId = "REPLACE_THIS_WITH_YOUR_LEADERBOARD_ID";
+	achievementId1 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID1";
+	achievementId2 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID2";
+	achievementId3 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID3";
+	achievementId4 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID4";
+	achievementId5 = "REPLACE_THIS_WITH_YOUR_ACHIEVEMENT_ID5";
+}
+*/
+ 
+// 
+document.addEventListener("deviceready", function(){
+	window.game.setUp();
+ 
+	//callback 
+	window.game.onLoginSucceeded = function(result) {
+		var playerDetail = result;
+        alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
+    };	
+    window.game.onLoginFailed = function() {
+        alert('onLoginFailed');
+    };
+	//	 
+    window.game.onSubmitScoreSucceeded = function() {
+        alert('onSubmitScoreSucceeded');
+    };	
+    window.game.onSubmitScoreFailed = function() {
+        alert('onSubmitScoreFailed');
+    };
+    window.game.onGetPlayerScoreSucceeded = function(result) {
+		var playerScore = result;
+        alert('onGetPlayerScoreSucceeded: ' + playerScore);
+    };
+    window.game.onGetPlayerScoreFailed = function() {
+        alert('onGetPlayerScoreFailed');
+    };	
+	//	 
+    window.game.onUnlockAchievementSucceeded = function() {
+        alert('onUnlockAchievementSucceeded');
+    };  
+    window.game.onUnlockAchievementFailed = function() {
+        alert('onUnlockAchievementFailed');
+    };
+    window.game.onIncrementAchievementSucceeded = function() {
+        alert('onIncrementAchievementSucceeded');
+    };  
+    window.game.onIncrementAchievementFailed = function() {
+        alert('onIncrementAchievementFailed');
+    };
+    window.game.onResetAchievementsSucceeded = function() {
+        alert('onResetAchievementsSucceeded');
+    };	
+    window.game.onResetAchievementsFailed = function() {
+        alert('onResetAchievementsFailed');
+    };
+	// 
+    window.game.onGetPlayerImageSucceeded = function(result) {
+		var playerImageUrl = result;
+        alert('onGetPlayerImageSucceeded: ' + playerImageUrl);
+    };
+    window.game.onGetPlayerImageFailed = function() {
+        alert('onGetPlayerImageFailed');
+    };		
+}, false);
 
 function freshStart(){
 		var test = "Player";
@@ -162,61 +240,6 @@ function memoryFlipTile(tile,val){
 
 
 
-document.addEventListener("deviceready", function(){
-	window.game.setUp();
-	//callback
-	window.game.onLoginSucceeded = function(result) {
-		var playerDetail = result;
-        alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
-    };	
-    window.game.onLoginFailed = function() {
-        alert('onLoginFailed');
-    };
-	//	
-    window.game.onSubmitScoreSucceeded = function() {
-        alert('onSubmitScoreSucceeded');
-    };	
-    window.game.onSubmitScoreFailed = function() {
-        alert('onSubmitScoreFailed');
-    };	
-    window.game.onGetPlayerScoreSucceeded = function(result) {
-		var playerScore = result;
-        alert('onGetPlayerScoreSucceeded: ' + playerScore);
-    };
-    window.game.onGetPlayerScoreFailed = function() {
-        alert('onGetPlayerScoreFailed');
-    };
-	//	
-    window.game.onUnlockAchievementSucceeded = function() {
-        alert('onUnlockAchievementSucceeded');
-    };  
-    window.game.onUnlockAchievementFailed = function() {
-        alert('onUnlockAchievementFailed');
-    };
-    window.game.onIncrementAchievementSucceeded = function() {
-        alert('onIncrementAchievementSucceeded');
-    };  
-    window.game.onIncrementAchievementFailed = function() {
-        alert('onIncrementAchievementFailed');
-    };
-    window.game.onResetAchievementsSucceeded = function() {
-        alert('onResetAchievementsSucceeded');
-    };	
-    window.game.onResetAchievementsFailed = function() {
-        alert('onResetAchievementsFailed');
-    };
-	//
-    window.game.onGetPlayerImageSucceeded = function(result) {
-		var playerImageUrl = result;
-        alert('onGetPlayerImageSucceeded: ' + playerImageUrl);
-    };
-    window.game.onGetPlayerImageFailed = function() {
-        alert('onGetPlayerImageFailed');
-    };	
-}, false);
-
-
-
 </script>
 
 
@@ -265,13 +288,14 @@ document.addEventListener("deviceready", function(){
 	</tr>
 	<tr>
 		<td>
-			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="history.go(0)"></td>
+			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="window.game.login();"></td>
 	</tr>
 	<tr>
 		<td>
 			<img src="images/game_13.gif" width="374" height="126" alt=""></td>
 	</tr>
 </table>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 <!-- End Save for Web Slices -->
 </body>
 </html>
