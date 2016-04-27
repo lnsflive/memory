@@ -144,6 +144,14 @@ document.addEventListener("deviceready", function(){
     };		
 }, false);
 
+
+function newStart(){
+	window.game.login();
+	freshStart();
+}
+
+
+
 function freshStart(){
 		var test = "Player";
 		document.getElementById('replace_div').innerHTML = test;
@@ -288,7 +296,7 @@ function memoryFlipTile(tile,val){
 	</tr>
 	<tr>
 		<td>
-			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="window.game.login();"></td>
+			<img src="images/reset_btn.gif" width="374" height="84" alt="" onClick="history.go(0)"></td>
 	</tr>
 	<tr>
 		<td>
