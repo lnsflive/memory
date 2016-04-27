@@ -149,9 +149,10 @@ document.addEventListener("deviceready", function(){
 
 
 function restart(){
-	sec = 0;
-	clearInterval(clock);
-	newBoard();
+	//sec = 0;
+	//clearInterval(clock);
+	//newBoard();
+	window.game.logout();
 }
 
 
@@ -251,7 +252,7 @@ function recall(){
 
 
 
-setTimeout(function(){ window.game.login(); }, 3000);
+setTimeout(function(){ window.game.login(); }, 2000);
 
 </script>
 
