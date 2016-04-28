@@ -103,7 +103,8 @@ document.addEventListener("deviceready", function(){
 		newBoard();
     };	
     window.game.onLoginFailed = function() {
-        alert('onLoginFailed');
+        //alert('onLoginFailed');
+		window.game.login();
     };
 	//	 
     window.game.onSubmitScoreSucceeded = function() {
