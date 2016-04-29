@@ -110,7 +110,9 @@ document.addEventListener("deviceready", function(){
 	window.game.onLoginSucceeded = function(result) {
 		var playerDetail = result;
         //alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
-		afterLogin();
+		var changeName = playerDetail['playerDisplayName'];
+		document.getElementById('replace_div').innerHTML = changeName;
+		newBoard();
     };	
     window.game.onLoginFailed = function() {
         alert('Login Failed. Please restart application.');
@@ -168,11 +170,6 @@ function restart(){
 	newBoard();
 }
 
-function afterLogin(){
-	var changeName = playerDetail['playerDisplayName'];
-		document.getElementById('replace_div').innerHTML = changeName;
-		newBoard();
-}
 
 
 var sec = 0;
