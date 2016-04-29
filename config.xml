@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 		xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.lnsflive.memorygame"
-        version     = "1.0.2" >
+        version     = "1.0.5" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -16,7 +16,6 @@
     <author href="http://jgonzalezy8.aisites.com/" email="lnsflive@gmail.com">
         Jaime Gonzalez
     </author>
-	<access origin="http://24.155.25.23/" subdomains="true" />
 	<access origin="http://google.com" subdomains="true" />
 	<access origin="http://play.google.com" subdomains="true" />
 	<platform name="android" >
