@@ -98,13 +98,10 @@ document.addEventListener("deviceready", function(){
 	window.game.onLoginSucceeded = function(result) {
 		var playerDetail = result;
         //alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
-		var changeName = playerDetail['playerDisplayName'];
-		document.getElementById('replace_div').innerHTML = changeName;
-		newBoard();
+		afterLogin();
     };	
     window.game.onLoginFailed = function() {
-        //alert('onLoginFailed');
-		window.game.login();
+        alert('Login Failed. Please restart application.');
     };
 	//	 
     window.game.onSubmitScoreSucceeded = function() {
@@ -159,7 +156,9 @@ function restart(){
 	newBoard();
 }
 
-
+function afterLogin(){
+	
+}
 
 
 var sec = 0;
@@ -266,14 +265,14 @@ function funChange2(){
 }
 
 function funChange3(){
-	window.game.showLeaderboard(leaderboardId);
+	window.game.showLeaderboards;
 }
 
 
 
 
 
-setTimeout(function(){ window.game.login(); }, 250);
+//setTimeout(function(){ window.game.login(); }, 250);
 
 </script>
 
