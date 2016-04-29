@@ -39,5 +39,4 @@
 	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="425178501386" />
 	</gap:plugin>
-	<plugin name="com.fridaydesigm.plugins.viewport_scale" spec="0.9.3" source="pgb" />
 </widget>
