@@ -27,6 +27,7 @@
 		<preference name="android-minSdkVersion" value="14" />
 		<preference name="android-targetSdkVersion" value="15" />
 		<preference name="android-installLocation" value="auto" />
+		 <preference name="EnableViewportScale" value="true" />
 		<icon src="icon.png" />
 		<supports-screens android:anyDensity="true" android:resizeable="true" 
 			android:smallScreens="true" 
