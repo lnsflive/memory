@@ -2,8 +2,9 @@
 <head>
 <title>Untitled-1</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" id="viewport" content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width />
+<meta name="viewport" id="viewport" content="user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1, width=device-width "/>
 <script type="text/javascript" src="cordova.js"></script>
+<!-- <script type="text/javascript" src="jquery.min.js"></script> -->
 </head>
 
 <style type="text/css">
@@ -60,6 +61,10 @@ div#memory_board > div{
 
 </style>
 <script>
+
+//var viewportScale = 1 / window.devicePixelRatio;
+//$("#viewport").attr("content","user-scalable=no, initial-scale="+viewportScale+", minimum-scale=0.2, maximum-scale=2, width=device-width");
+
 document.getElementById("viewport").setAttribute("content","user-scalable=no, initial-scale="+viewportScale+", minimum-scale=0.2, maximum-scale=2, width=device-width");
 
 function checkAlert(){
