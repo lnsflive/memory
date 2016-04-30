@@ -28,11 +28,11 @@
 		<preference name="android-targetSdkVersion" value="15" />
 		<preference name="android-installLocation" value="auto" />
 		<icon src="icon.png" />
-		<supports-screens android:anyDensity="true" android:resizeable="true" 
+		<supports-screens android:anyDensity="false" android:resizeable="false" 
 			android:smallScreens="false" 
 			android:normalScreens="false" 
-			android:largeScreens="true" 
-			android:xlargeScreens="false" />
+			android:largeScreens="false" 
+			android:xlargeScreens="true" />
 
 	</platform>
 	<gap:plugin name="cordova-plugin-game" source="npm" >
