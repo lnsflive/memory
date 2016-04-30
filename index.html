@@ -2,15 +2,24 @@
 <head>
 <title>Untitled-1</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" id="viewport" content="user-scalable=1, initial-scale=1, width=device-width, target-densitydpi=device-dpi"/>
+<meta name="viewport" id="viewport" content="user-scalable=1, initial-scale=1, width=2560, target-densitydpi=device-dpi"/>
 <script type="text/javascript" src="cordova.js"></script>
 </head>
 
 <style type="text/css">
 
-body{
+@media screen and(max-device-width:450px){
+	body{
 zoom:.73;
 }
+}
+
+@media screen and(min-device-width:500px){
+	body{
+zoom:1;
+}
+}
+
 
 h1,div#timer,div#tries,div#replace_div{
 	color:red;
