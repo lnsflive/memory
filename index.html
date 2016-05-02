@@ -101,11 +101,7 @@ document.addEventListener("deviceready", function(){
         //alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
 		var changeName = playerDetail['playerDisplayName'];
 		document.getElementById('replace_div').innerHTML = changeName;
-		if (window.game.isLoggedIn = false){
-		newBoard();}
-		else {
-				alert('logged in');
-		}
+		
     };	
     window.game.onLoginFailed = function() {
         alert('Login Failed. Please restart application.');
@@ -270,22 +266,25 @@ function memoryFlipTile(tile,val){
 
 
 function funChange(){
-	alert(window.game.isLoggedIn());
+	window.game.login();
 	window.game.showAchievements();
 }
 
 function funChange2(){
-	alert(window.game.isLoggedIn());
+	window.game.login();
 	window.game.showLeaderboard(leaderboardId);
 }
 
 function funChange3(){
-	alert(window.game.isLoggedIn());
+	window.game.login();
 	window.game.showLeaderboard(leaderboardId);
 }
 
 
-
+function clickStart(){
+	window.game.login();
+	newBoard();
+}
 
 
 //setTimeout(function(){ window.game.login(); }, 250);
@@ -300,7 +299,7 @@ function funChange3(){
 		<td rowspan="9">
 			<!-- <img src="images/game_01.gif" width="1988" height="1440" alt=""></td> -->
 			<div id="memory_board">
-					<img src="info.png" onclick="window.game.login();" />
+					<img src="info.png" onclick="clickStart();" />
 			</div>
 		<td colspan="4">
 			<img src="images/game_02.gif" width="572" height="511" alt="" onclick="funChange();"></td>
