@@ -70,6 +70,19 @@ div#memory_board > div{
 </style>
 <script>
 
+
+
+achievementSound = new Audio('sounds/achievement.mp3');
+startGame = new Audio('sounds/startGame.mp3'); 
+cardFlip = new Audio('sounds/cardFlip.mp3'); 
+wrongFlip = new Audio('sounds/wrong.mp3'); 
+correctFlip = new Audio('sounds/correct.mp3'); 
+finishGame = new Audio('sounds/finishGame.mp3'); 
+
+
+
+
+
 var leaderboardId = "CgkIiqL09K8MEAIQBw";
 var achievementId1 = "CgkIiqL09K8MEAIQAQ";
 var achievementId2 = "CgkIiqL09K8MEAIQAg";
@@ -110,6 +123,7 @@ document.addEventListener("deviceready", function(){
 	//	 
     window.game.onUnlockAchievementSucceeded = function() {
         //alert('onUnlockAchievementSucceeded');
+        achievementSound.play();
     };  
     window.game.onUnlockAchievementFailed = function() {
         alert('onUnlockAchievementFailed');
@@ -171,6 +185,7 @@ Array.prototype.memory_tile_shuffle = function(){
     }
 }
 function newBoard(){
+	startGame.play();
 	startstop();
 	tiles_flipped = 0;
 	var output = '';
@@ -185,6 +200,7 @@ function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && memory_values.length < 2){
 		tile.style.background = '#FFF';
 		tile.innerHTML = val;
+		cardFlip.play();
 		if(memory_values.length == 0){
 			memory_values.push(val);
 			memory_tile_ids.push(tile.id);
@@ -194,17 +210,24 @@ function memoryFlipTile(tile,val){
 			number_tries++;
 			document.getElementById("tries").innerHTML = number_tries;
 			if(memory_values[0] == memory_values[1]){
+				correctFlip.pause();
+				correctFlip.load();
+				correctFlip.play();
 				tiles_flipped += 2;
 				// Clear both arrays
 				memory_values = [];
             	memory_tile_ids = [];
 				// Check to see if the whole board is cleared
 				if(tiles_flipped == memory_array.length){
-				var name = document.getElementById('replace_div').innerHTML;
-				
-				var score = (200 - sec) + (100 - number_tries);
-				window.game.submitScore(leaderboardId, score*5.1);
+				finishGame.play();
 				clearInterval(clock);
+				//var score = (200 - sec) + (100 - number_tries);
+				var solvedTime = Math.sqrt(sec);
+				var solvedMoves = Math.pow(2, number_tries);
+				var score = ((1/solvedTime) + (2/solvedMoves))*10000;
+				alert('Your score is: ' + score);
+				window.game.submitScore(leaderboardId, score*5.1);
+				
 				//setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
 				window.game.unlockAchievement(achievementId1);
 				window.game.incrementAchievement(achievementId2, 1)
@@ -235,6 +258,7 @@ function memoryFlipTile(tile,val){
 				    // Clear both arrays
 				    memory_values = [];
             	    memory_tile_ids = [];
+            	    wrongFlip.play();
 				}
 				setTimeout(flip2Back, 500);
 			}
