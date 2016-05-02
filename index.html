@@ -266,22 +266,22 @@ function memoryFlipTile(tile,val){
 
 
 function funChange(){
+window.game.login();
 	if (window.game.isLoggedIn = true) {
-	window.game.showAchievements;
+	window.game.showAchievements();
 	} else {
 		alert('Please Login');
 	}
 }
 
 function funChange2(){
-	if (window.game.isLoggedIn = true) {
+	window.game.login();
 	window.game.showLeaderboard(leaderboardId);
-	} else {
-		alert('Please Login');
-	}
+
 }
 
 function funChange3(){
+window.game.login();
 	if (window.game.isLoggedIn = true) {
 	window.game.showLeaderboard(leaderboardId);
 	} else {
