@@ -267,21 +267,26 @@ function memoryFlipTile(tile,val){
 
 function funChange(){
 	window.game.login();
-	setTimeout(function(){ window.game.showAchievements(); }, 500);
+	showA();
 
 }
 
 function funChange2(){
 	window.game.login();
-	setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 100);
+	setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 400);
 }
 
 function funChange3(){
 	window.game.login();
-	setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 350);
+	showLeader();
 }
 
-
+function showA() {
+	window.game.showAchievements();
+}
+function showLeader(){
+	window.game.showLeaderboard(leaderboardId);
+}
 function clickStart(){
 	window.game.login();
 	newBoard();
