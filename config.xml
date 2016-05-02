@@ -35,6 +35,9 @@
 			android:xlargeScreens="true" />
 	</platform>
 	<gap:plugin name="cordova-plugin-game" source="npm" >
+		<param name="APP_ID" value="425178501386" />
+	</gap:plugin>
+	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="638779587773" />
 	</gap:plugin>
 </widget>

@@ -101,7 +101,11 @@ document.addEventListener("deviceready", function(){
         //alert('onLoginSucceeded: ' + playerDetail['playerId'] + ' ' + playerDetail['playerDisplayName']);
 		var changeName = playerDetail['playerDisplayName'];
 		document.getElementById('replace_div').innerHTML = changeName;
-		newBoard();
+		if (window.game.isLoggedIn = false){
+		newBoard();}
+		else {
+				alert('logged in');
+		}
     };	
     window.game.onLoginFailed = function() {
         alert('Login Failed. Please restart application.');
