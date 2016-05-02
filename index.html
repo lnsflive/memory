@@ -84,12 +84,12 @@ finishGame = new Audio('sounds/finishGame.mp3');
 
 
 var leaderboardId = "CgkIiqL09K8MEAIQBw";
-var achievementId1 = "CgkIiqL09K8MEAIQAQ";
-var achievementId2 = "CgkIiqL09K8MEAIQAg";
-var achievementId3 = "CgkIiqL09K8MEAIQAw";
-var achievementId4 = "CgkIiqL09K8MEAIQBA";
-var achievementId5 = "CgkIiqL09K8MEAIQBQ";
-var achievementId6 = "CgkIiqL09K8MEAIQBg";
+var achievementId1 = "CgkIvfnr0csSEAIQAg";
+var achievementId2 = "CgkIvfnr0csSEAIQAw";
+var achievementId3 = "CgkIvfnr0csSEAIQBA";
+var achievementId4 = "CgkIvfnr0csSEAIQBQ";
+var achievementId5 = "CgkIvfnr0csSEAIQBg";
+var achievementId6 = "CgkIvfnr0csSEAIQBw";
 
 
 document.addEventListener("deviceready", function(){
@@ -227,7 +227,7 @@ function memoryFlipTile(tile,val){
 				var score = ((1/solvedTime) + (2/solvedMoves))*10000;
 				window.game.submitScore(leaderboardId, score);
 				//setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
-				window.game.incrementAchievement(achievementId1, 1)
+				window.game.incrementAchievement(achievementId1, 2)
 				window.game.incrementAchievement(achievementId2, 1)
 				window.game.incrementAchievement(achievementId3, 1)
 				window.game.incrementAchievement(achievementId4, 1)
@@ -266,17 +266,17 @@ function memoryFlipTile(tile,val){
 
 
 function funChange(){
-	window.game.login();
+	alert(window.game.isLoggedIn());
 	window.game.showAchievements();
 }
 
 function funChange2(){
-	window.game.login();
+	alert(window.game.isLoggedIn());
 	window.game.showLeaderboard(leaderboardId);
 }
 
 function funChange3(){
-	window.game.login;
+	alert(window.game.isLoggedIn());
 	window.game.showLeaderboard(leaderboardId);
 }
 
