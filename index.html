@@ -225,11 +225,9 @@ function memoryFlipTile(tile,val){
 				var solvedTime = Math.sqrt(sec);
 				var solvedMoves = Math.pow(2, number_tries);
 				var score = ((1/solvedTime) + (2/solvedMoves))*10000;
-				alert('Your score is: ' + score);
-				window.game.submitScore(leaderboardId, score*5.1);
-				
+				window.game.submitScore(leaderboardId, score);
 				//setTimeout(function(){ window.game.unlockAchievement(achievementId1); }, 3000);
-				window.game.unlockAchievement(achievementId1);
+				window.game.incrementAchievement(achievementId1, 1)
 				window.game.incrementAchievement(achievementId2, 1)
 				window.game.incrementAchievement(achievementId3, 1)
 				window.game.incrementAchievement(achievementId4, 1)
@@ -268,14 +266,17 @@ function memoryFlipTile(tile,val){
 
 
 function funChange(){
+	window.game.login();
 	window.game.showAchievements();
 }
 
 function funChange2(){
+	window.game.login();
 	window.game.showLeaderboard(leaderboardId);
 }
 
 function funChange3(){
+	window.game.login;
 	window.game.showLeaderboard(leaderboardId);
 }
 
