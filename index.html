@@ -267,7 +267,7 @@ function memoryFlipTile(tile,val){
 
 function funChange(){
 	window.game.login();
-	showA();
+	setTimeout(function(){ window.game.showAchievements(); }, 400);
 
 }
 
@@ -278,15 +278,10 @@ function funChange2(){
 
 function funChange3(){
 	window.game.login();
-	showLeader();
+	setTimeout(function(){ window.game.showLeaderboard(leaderboardId); }, 400);
 }
 
-function showA() {
-	window.game.showAchievements();
-}
-function showLeader(){
-	window.game.showLeaderboard(leaderboardId);
-}
+
 function clickStart(){
 	window.game.login();
 	newBoard();
