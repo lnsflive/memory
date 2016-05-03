@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 		xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.lnsflive.memorygame"
-        version     = "10" >
+        version     = "11" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -46,7 +46,7 @@
   		<icon src="icon-120.png" platform="ios" width="120" height="120" />
   		<icon src="icon-76.png" platform="ios" width="76" height="76" />
   		<icon src="icon-152.png" platform="ios" width="152" height="152" />
-  		<splash src="splash.png" />
+  		<splash src="splash.jpg" />
 	</platform>
 	
 	<gap:plugin name="cordova-plugin-game" source="npm" >
