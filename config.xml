@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 		xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.lnsflive.memorygame"
-        version     = "4" >
+        version     = "5" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -34,7 +34,19 @@
 			android:largeScreens="true" 
 			android:xlargeScreens="true" />
 	</platform>
+	
+	<platform name="ios" >
+  		<preference name="orientation" value="landscape" />
+  		<preference name="phonegap-version" value="cli-6.1.0" />
+  		<preference name="fullscreen" value="true" />
+  		<preference name="target-device" value="handset" />
+  		<preference name="exit-on-suspend" value="true" />
+  		<preference name="deployment-target" value="7.0" />
+  		<icon src="icon.png" />
+	</platform>
+	
 	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="638779587773" />
 	</gap:plugin>
+	<!-- <gap:plugin name="cordova-plugin-game-center" version="0.4.1" source="npm" /> -->
 </widget>
