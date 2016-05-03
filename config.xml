@@ -51,8 +51,9 @@
 	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="638779587773" />
 	</gap:plugin>
+	<!-- 
 	<gap:config-file platform="ios" parent="ITSAppUsesNonExemptEncryption" mode="add">
 		<false/>
 	</gap:config-file>
-	<!-- <gap:plugin name="cordova-plugin-game-center" version="0.4.1" source="npm" /> -->
+	<gap:plugin name="cordova-plugin-game-center" version="0.4.1" source="npm" /> -->
 </widget>
