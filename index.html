@@ -84,7 +84,6 @@ div#memory_board > div{
 achievementSound = new Audio('sounds/finishGame.mp3');
 startGame = new Audio('sounds/startGame.mp3'); 
 cardFlip = new Audio('sounds/cardFlip.mp3'); 
-wrongFlip = new Audio('sounds/wrong.mp3'); 
 correctFlip = new Audio('sounds/correct.mp3'); 
 finishGame = new Audio('sounds/achievement.mp3'); 
 
@@ -279,7 +278,6 @@ function memoryFlipTile(tile,val){
 				    // Clear both arrays
 				    memory_values = [];
             	    memory_tile_ids = [];
-            	    wrongFlip.play();
 				}
 				setTimeout(flip2Back, 500);
 			}
