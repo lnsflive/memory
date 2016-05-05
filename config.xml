@@ -37,18 +37,18 @@
 	
 	<platform name="ios" >
   		<preference name="orientation" value="landscape" />
-  		<preference name="phonegap-version" value="3.4.0" />
-  		<preference name="target-device" value="handset" />
+  		<preference name="phonegap-version" value="cli-6.1.0" />
   		<preference name="fullscreen" value="true" />
   		<preference name="exit-on-suspend" value="true" />
   		<preference name="deployment-target" value="7.0" />
   		<icon src="icon.png" />
   		<icon src="icon-120.png" platform="ios" width="120" height="120" />
   		<icon src="icon-76.png" platform="ios" width="76" height="76" />
+  		<icon src="icon-152.png" platform="ios" width="152" height="152" />
   		<splash src="splash.png" />
   		<splash src="splash.png" platform="ios" width="320" height="480" />
   		<splash src="splash2x.png" platform="ios" width="640" height="1136" />
-
+  		<splash src="splash3x.png" platform="ios" width="750" height="1334" />
 	</platform>
 	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="638779587773" />
