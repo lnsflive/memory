@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 		xmlns:android   = "http://schemas.android.com/apk/res/android"
         id          = "com.lnsflive.memorygame"
-        version     = "13" >
+        version     = "14" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -37,7 +37,8 @@
 	
 	<platform name="ios" >
   		<preference name="orientation" value="landscape" />
-  		<preference name="phonegap-version" value="cli-6.1.0" />
+  		<preference name="phonegap-version" value="cli-5.2.0" />
+  		<preference name="target-device" value="handset" />
   		<preference name="fullscreen" value="true" />
   		<preference name="exit-on-suspend" value="true" />
   		<preference name="deployment-target" value="7.0" />
