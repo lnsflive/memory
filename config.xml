@@ -56,7 +56,7 @@
 		</array>
 	</gap:config-file>
 	</platform>
-	
+	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="cordova-plugin-game" source="npm" >
 		<param name="APP_ID" value="638779587773" />
 	</gap:plugin>
