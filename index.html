@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" id="viewport" content="user-scalable=0, initial-scale=1, width=device-width, target-densitydpi=device-dpi "/>
 <script type="text/javascript" src="cordova.js"></script>
+<script type='application/javascript' src='fastclick.js'></script>
 </head>
 
 <style type="text/css">
@@ -112,6 +113,12 @@ div#memory_board > div{
 </style>
 <script>
 
+document.addEventListener("deviceready", onDeviceReady, false);
+ 
+function onDeviceReady() {
+    // Fast-click to elliminate the delay of 300ms
+    FastClick.attach(document.body);
+}
 
 
 achievementSound = new Audio('sounds/finishGame.mp3');
